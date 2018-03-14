@@ -18,7 +18,7 @@ int main()
 	while(true)
 	{
 		OpenClipboard(hwnd);
-		if (OpenClipboard(NULL))
+		if (OpenClipboard(NULL) && IsClipboardFormatAvailable(CF_TEXT))
 		{
 			uchwyt = GetClipboardData(CF_TEXT);
 			
@@ -38,7 +38,7 @@ int main()
 		
 		CloseClipboard();
 		if(GetAsyncKeyState(0x26)) break;
-		Sleep(3000);
+		Sleep(1500);
 	}
 	plik.close();
 	
