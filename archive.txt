@@ -1,0 +1,64 @@
+Tue Apr 10 21:03:34 2018: 3828250487
+
+Tue Apr 10 21:06:34 2018: 3828250487
+
+Tue Apr 10 21:06:40 2018: answer! Tha
+
+Tue Apr 10 21:14:17 2018:   <GameConditionDef>
+    <defName>SolarFlare</defName>
+    <label>solar flare</label>
+    <description>A solar flare is hitting the planet. This creates extreme electrical interference and prevents most electrical devices from working.</description>
+    <endMessage>The solar flare is ending.</endMessage>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+
+Tue Apr 10 21:15:23 2018: <conditionClass>GameCondition_Eclipse</conditionClass>
+
+Tue Apr 10 21:29:16 2018: 	<IncidentDef>
+		<defName>HeatWave</defName>
+		<label>heat wave</label>
+		<category>Misc</category>
+    <targetTypes>
+      <li>MapPlayerHome</li>
+    </targetTypes>
+		<workerClass>IncidentWorker_HeatWave</workerClass>
+		<gameCondition>HeatWave</gameCondition>
+		<letterLabel>Heat wave</letterLabel>
+		<letterText>An unusual heat wave has begun.\n\nHeat waves can kill quickly if people start getting heatstroke. Stay cool by building a cooler or getting deep under a mountain.</letterText>
+		<letterDef>ThreatSmall</letterDef>
+		<baseChance>3</baseChance>
+		<minRefireDays>30</minRefireDays>
+		<durationDays>
+			<min>1.5</min>
+			<max>3.5</max>
+		</durationDays>
+	</IncidentDef>
+
+Tue Apr 10 21:31:09 2018: Over
+
+Tue Apr 10 21:44:35 2018: public class IncidentWorker_HeatWave : IncidentWorker_MakeGameCondition
+{
+	protected override bool CanFireNowSub(IIncidentTarget target)
+	{
+		if (!base.CanFireNowSub(target))
+		{
+			return false;
+		}
+		Map map = (Map)target;
+		return map.mapTemperature.SeasonalTemp >= 20f;
+	}
+}
+
+
+Tue Apr 10 23:09:30 2018: return GameConditionUtility.LerpInOutValue(this, (float)(rnd.Next(40000,48000)), 476f);
+
+Mon Sep 17 15:55:53 2018: https://www.filmweb.pl/film/Bez+granic-2005-151399/descs
+
+Mon Sep 17 15:56:16 2018: Syn legendarnych super bohaterów Commandera i Jetstream, m³ody Will Stronghold rokuje wielkie nadzieje, gdy podejmuje naukê w elitarnej szkole nastawionej na kszta³cenie wspó³czesnych super bohaterów. U Willa jeszcze nie objawi³a siê jego super moc i wydaje siê, ¿e bêdzie dorasta³ jako zwyk³y ch³opak. Do czasu. , wkrótce Will odkrywa co jest jego prawdziw¹ si³¹ i przekonuje siê, ¿e aby staæ siê bohaterem trzeba byæ lojalnym wobec innych i pracowaæ w zespole.
+
+Sun Sep 30 12:23:29 2018: HWND hWnd = GetConsoleWindow();
+    ShowWindow( hWnd, SW_HIDE );
+
+Sun Sep 30 12:27:21 2018: HWND hWnd = GetConsoleWindow();
+    ShowWindow( hWnd, SW_HIDE );
+
